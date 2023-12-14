@@ -13,6 +13,7 @@ import { ChangeEvent, useEffect, useState } from "react";
 import { Modal } from "@/stories/components/Modal/Modal";
 import { listChurras } from "../../utils/mocks";
 import { formatDateBr } from "@/utils/format-date";
+import { Footer } from "@/stories/components/Footer/Footer";
 
 export default function List() {
   const [churrasStorage, setItems] = useState([]);
@@ -29,25 +30,29 @@ export default function List() {
   const [churras, setChurras] = useState<any[]>(listChurras as any);
   const [churrasName, setChurrasName] = useState<string>("");
   const [churrasDate, setChurrasDate] = useState<string>("R$");
+  const [churrasDescription, setChurrasDescription] = useState<string>("");
 
   const addChurras = () => {
     if (churrasName && churrasDate) {
-      setChurras([...churras, { name: churrasName, date: churrasDate }]);
+      setChurras([...churras, { name: churrasName, date: churrasDate, description: churrasDescription }]);
+
       setChurrasName("");
       setChurrasDate("");
+      setChurrasDescription("");
       localStorage.setItem(
         "churras",
         JSON.stringify([
           ...churras,
-          ...[{ name: churrasName, date: churrasDate, people: [], money: "" }],
+          ...[{ name: churrasName, date: churrasDate, people: [], description: churrasDescription, money: "" }],
         ])
       );
+      setOpenModal(false);
     }
   };
 
   return (
-    <div>
-      <main className="flex h-[50vw] flex-col items-center justify-between p-12 relative font-raleway ">
+    <>
+      <main className="flex h-[100%] bg-[#FAFAFA] flex-col items-center justify-between p-12 relative font-raleway ">
         <div className="flex flex-wrap w-[56%] justify-center gap-5 absolute -top-10">
           {(churrasStorage.length > churras.length
             ? churrasStorage
@@ -128,6 +133,19 @@ export default function List() {
                 }
                 required
               />
+              <div className="flex flex-col gap-5">
+                <Text label="Descrição:" fontSize="text-[21px]" />
+                <textarea
+                  className="p-4"
+                  name="Descrição"
+                  id=""
+                  cols={30}
+                  rows={10}
+                  onChange={(e) =>
+                    setChurrasDescription(e.target.value)
+                  }
+                ></textarea>
+              </div>
             </div>
             <Button
               label={"Cadastrar"}
@@ -138,6 +156,6 @@ export default function List() {
           </div>
         </Modal>
       )}
-    </div>
+    </>
   );
 }

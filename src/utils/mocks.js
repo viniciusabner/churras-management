@@ -80,6 +80,7 @@ export const listChurras = [
         },
       ],
       money: "R$280",
+      description: "Vamos fazer uma festa bem legal para o Gui.",
       id: 1,
     },
     {
@@ -153,6 +154,7 @@ export const listChurras = [
         },
       ],
       money: "R$240",
+      description: "",
       id: 2,
     },
     {
@@ -211,6 +213,7 @@ export const listChurras = [
         },
       ],
       money: "R$180",
+      description: "",
       id: 3,
     },
   ];

@@ -70,7 +70,7 @@ export default function Detail() {
     return total;
   };
 
-  const total = somarValores(participants);
+  const total = somarValores(participants ? participants : []);
 
   return (
     <div className="bg-[#FAFAFA]">
@@ -86,6 +86,12 @@ export default function Detail() {
                 label={list?.name}
                 fontSize="text-[21px]"
                 fontWeight="font-bold"
+                color="text-[#000000CC]"
+              />
+              <Text
+                label={list?.description}
+                fontSize="text-[16px]"
+                fontWeight="font-normal"
                 color="text-[#000000CC]"
               />
             </div>

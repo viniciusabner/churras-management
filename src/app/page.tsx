@@ -21,8 +21,8 @@ export default function Home() {
     }
   };
   return (
-    <main className="flex min-h-fit flex-col items-center justify-between p-24 bg-[#FFD836]">
-      <div className="flex flex-col z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
+    <main className="flex flex-col h-[64%] items-center justify-between p-12 bg-[#FFD836] relative">
+      <div className="flex flex-col z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex absolute -top-20">
         <Input
           type="email"
           id="email"
@@ -55,7 +55,7 @@ export default function Home() {
           onclick={handleSubmit as () => void}
         />
 
-        <Footer className="bg-[#FFD836] mt-[120px]" />
+        <Footer className="bg-[#FFD836] mt-[70px]" />
       </div>
     </main>
   );
