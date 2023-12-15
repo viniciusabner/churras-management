@@ -24,7 +24,8 @@ Foi utilizado Next.JS, Tailwind, Typescript, Storybook
 Extras:
 
 - [ ] Criar um endpoint simples para poder retirar os dados do localstorage;
-- [ ] Fazer validação de login e senha mais segura, utilizando JWT;
+- [ ] Fazer validação de login e senha mais segura, utilizando JWT;;
+- [ ] Criar calculadora de churrasco
 - [ ] Criação de testes unitários com Jest
 
 ### Pré-requisitos
